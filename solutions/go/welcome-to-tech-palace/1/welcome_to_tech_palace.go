@@ -1,0 +1,26 @@
+package techpalace
+
+import (
+	"fmt"
+	"strings"
+)
+
+// WelcomeMessage returns a welcome message for the customer.
+func WelcomeMessage(customer string) string {
+	return "Welcome to the Tech Palace, " + strings.ToUpper(customer)
+}
+
+// AddBorder adds a border to a welcome message.
+func AddBorder(welcomeMsg string, numStarsPerLine int) string {
+	star := strings.Repeat("*", numStarsPerLine)
+	message := fmt.Sprintf(`%s
+%s
+%s`, star, welcomeMsg, star)
+	return message
+}
+
+// CleanupMessage cleans up an old marketing message.
+func CleanupMessage(oldMsg string) string {
+	clean := strings.ReplaceAll(oldMsg, "*", "")
+	return strings.TrimSpace(clean)
+}
